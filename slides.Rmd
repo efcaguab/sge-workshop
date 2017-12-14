@@ -1,0 +1,76 @@
+---
+title: "Abacus"
+author: Bernat Bramon & Fernando Cagua
+date: December 15, 2017
+output: 
+  revealjs::revealjs_presentation:
+    center: true
+---
+
+## The cluster is just another computer
+
+## Basic unix commands
+
+- ls
+- Bullet 2
+- Bullet 3
+
+### Task: Explore your own files using the terminal
+
+# Accessing the cluster
+
+## Log into your account
+
+```{bash, eval = F}
+ssh usr123@abacus
+```
+
+##Create a new directory in your home directory
+
+```{bash, eval = F}
+mkdir ~/workshop
+```
+
+## Change your password
+
+```{bash, eval = F}
+passwd
+```
+
+# Moving files to the cluster
+
+## Task: make an R script
+
+In your computer open an R session make an R script
+
+```{r, eval = F}
+Sys.sleep(20)
+message("my first job in the cluster")
+```
+
+## Move it to the cluster
+
+In your computer
+
+```{bash, eval = F}
+scp ~/path_to_sript/r_script_name.R usr123@abacus:~/workshop 
+```
+
+## Modify the R script
+
+In abacus
+
+```{bash, eval = F}
+nano ~/workshop/r_script_name.R
+```
+
+Besides `nano` you can also use other text editors like `vim` or `vi` in case you need/want to modify files directly in the cluster
+
+# Pulling files from Github
+
+## Enabling internet in Abacus
+
+```{bash, eval = F}
+telnet ienabler 259
+```
+
