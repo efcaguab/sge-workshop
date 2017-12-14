@@ -85,6 +85,113 @@ Have a look at the output files to see the results!
 
 flag y concepto
 
+## 
+
+Sometimes we want to use several cores within the same job.
+
+##
+
+the following R script would take 10 minutes to complete
+
+```{r, eval = F}
+for(i in 1:100){
+  # your code goes here
+  # the following instruction takes 6 seconds to complete
+  Sys.sleep(6)
+}
+```
+
+##
+
+Instead of evaluating each iteration in the loop sequentially we could tell the computer to run several in parallel. 
+
+To do that we need to employ a parallel environment in R. 
+
+##
+
+If you're using *unix* you could use the `doMC` + `parallel` packages for the parallel environment. We won't cover parallel environments for *windows* because you cannot use those in the Abacus cluster.
+
+##
+
+run this instructions in your R console
+
+```{r, eval = F}
+install.packages("doMC")
+install.packages("parallel")
+install.packages("foreach")
+```
+
+The last package provides a parallel version of a `for`-loop
+
+##
+
+the parallel equivalent of the sequential loop shown before would be
+
+```{r, eval = F}
+library(doMC)
+library(parallel)
+library(foreach)
+# use 2 cores in the 
+registerDoMC(cores = 2)
+foreach(i=1:100) %dopar% {
+  # your code goes here
+  # the following instruction takes 6 seconds to complete
+  Sys.sleep(6)
+}
+```
+
+here we're using two cores so it takes 5 minutes instead of 10
+
+## 
+
+Current computers usually between 2 and 8 cores. Abacus has nodes that have up to 48 cores. The same loop would take 18 seconds instead of 10 minutes.
+
+## 
+
+Let's try to run that in the cluster
+
+## 
+
+First we need to install the required packages in the cluster
+
+##
+
+1. Make sure you have internet access
+2. In abacus open `R` from the console
+3. Run the commands to install the packages
+
+```{r, eval = F}
+options(repos = "https://cran.rstudio.com/")
+install.packages("doMC")
+install.packages("parallel")
+install.packages("foreach")
+```
+
+##
+
+The bash script to call script-multicore.R looks very similar:
+
+```{bash, eval = F}
+#!/bin/bash
+
+Rscript script-multicore.R
+```
+
+##
+
+But we need to tell qsub that our job needs several cores instead of one. 
+
+To do that we use the option `-pe multi-thread`
+
+##
+
+You can run the parallel loop typing the following in the Abacus console
+
+```{bash, eval = F}
+qsub -S /bin/bash -pe multi-thread 8 script-multicore.sh
+```
+
+
 # RAM Memory limitations
 
 flag y concepto
