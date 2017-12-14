@@ -54,12 +54,12 @@ There are multiple quewing systems available. Abacus uses SGE (Sun Grid Engine S
 
 ##
 
-There are 4 basic commands we'll cover today
+There are 3 basic commands we'll cover today
 
 ```{bash, eval = F}
 qsub
-qdel
 qstat
+qdel
 ```
 
 # qsub
@@ -109,10 +109,6 @@ Sys.sleep(20)
 message("my second job in the cluster")
 error <- log("This will produce an error because it is a string")
 ```
-
-
-##
-
 
 # qstat
 
