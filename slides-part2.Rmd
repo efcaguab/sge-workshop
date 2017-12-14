@@ -60,7 +60,6 @@ There are 4 basic commands we'll cover today
 qsub
 qdel
 qstat
-qalter
 ```
 
 # qsub
@@ -129,7 +128,6 @@ qstat
 qdel the_job_id_you_see_on_qstat
 ```
 
-# qalter
 
 
 
