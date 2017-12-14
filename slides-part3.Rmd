@@ -188,13 +188,34 @@ To do that we use the option `-pe multi-thread`
 You can run the parallel loop typing the following in the Abacus console
 
 ```{bash, eval = F}
-qsub -S /bin/bash -pe multi-thread 8 script-multicore.sh
+qsub -S /bin/bash -pe multi_thread 8 script-multicore.sh
 ```
 
+##
+
+Take into account that the more cores we request the harder it is to schedule these jobs cause the cluster needs to find a node with all those cores free. 
 
 # RAM Memory limitations
 
 flag y concepto
+
+##
+
+Depending on the queue we use and the user privileges each job is limited to use 1-2 Gigabytes of RAM memory. 
+
+##
+
+To request more memory we need to use the options `-l mem_free` & `h_vmem`.
+
+To request 8 Gigabytes of RAM for a job we would run:
+
+```{bash, eval = F}
+qsub -l mem_free=8G h_vmem=8G script.sh
+```
+
+##
+
+Abacus has around 100GB ram in each node. But keep in mind that jobs that request large amounts of RAM are harder to schedule and take resources other people could use. Only request what you actually need. 
 
 # Other parametres
 
