@@ -1,0 +1,24 @@
+---
+title: "Abacus - Part 3"
+author: "Bernat Bramon & Fernando Cagua"
+date: "December 15, 2017"
+---
+  
+Let's get into making the most out of the cluster...
+
+# Parallel jobs
+
+flag y concepto
+
+# Multicore programming
+
+flag y concepto
+
+# RAM Memory limitations
+
+flag y concepto
+
+# Other parametres
+
+3cwd, errors maricadas
+
