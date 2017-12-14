@@ -10,6 +10,77 @@ Let's get into making the most out of the cluster...
 
 flag y concepto
 
+##
+
+What is a parallel job?
+
+##
+
+Running three times the same job would look something like this...
+
+```{bash, eval = F}
+qsub -cwd -S /bin/bash script.sh
+qsub -cwd -S /bin/bash script.sh
+qsub -cwd -S /bin/bash script.sh
+```
+
+##
+
+There is a more efficient way of doing this...
+
+```{bash, eval = F}
+qsub -t 1-3 -cwd -S /bin/bash script.sh
+```
+
+##
+
+What if we need to slightly change the script for every iteration?
+
+##
+
+For example...
+
+```{bash, eval = F}
+qsub -cwd -S /bin/bash script.sh 1
+qsub -cwd -S /bin/bash script.sh 2
+qsub -cwd -S /bin/bash script.sh 3
+```
+
+##
+
+To do this, we need to add a variable to the R script. Let's have a look at the file script-parallel.R.
+
+```{r, eval = F}
+args <- commandArgs(trailingOnly=T)
+i <- args[1]
+
+Sys.sleep(20)
+message(paste("my job number", i, sep=" "))
+```
+
+##
+Then change your bash script so that it can collect the index from the flag -t
+
+```{bash, eval = F}
+#!/bin/bash
+
+Rscript script-parallel.R $SGE_TASK_ID
+
+```
+
+##
+
+Now, you can call your new bash script doing:
+
+```{bash, eval = F}
+qsub -t 1-3 -cwd -S /bin/bash script-parallel.sh
+```
+
+##
+
+Have a look at the output files to see the results!
+
+
 # Multicore programming
 
 flag y concepto
