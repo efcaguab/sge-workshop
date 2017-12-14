@@ -271,4 +271,32 @@ Let's have a look at this template:
 
 ```
 
+# Getting fancy
+
+The possibilities are limitless, the problems you can find too...
+
+# Output files
+
+As we shown, you can specify where to store the output files.
+
 ##
+
+Another option is generating the output files using R. Let's change the file `script.R` that we used before:
+
+```{r, eval = F}
+Sys.sleep(20) # this instruction takes 20 seconds to complete
+message("my second job in the cluster")
+
+output <- 10
+save(output, file="output.RData")
+```
+
+##
+
+Run this new script with qsub and check the file generated. To do this, open an R session in the cluster and load the file using:
+```{r, eval = F}
+load("output.RData")
+print(output)
+```
+
+
