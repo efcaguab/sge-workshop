@@ -103,7 +103,31 @@ job-ID  prior   name       user         state submit/start at     queue         
 1382765 0.60500 run_simula jmp197       r     12/13/2017 15:50:26 all.q@compute-0-13.local          41 3
 ```
 
+## 
+
+try submiting a job and then getting info about it
+
+```{bash, eval = F}
+qsub script.sh
+qstat
+```
+
+
 # qdel
+
+##
+
+`qdel` is used to delete jobs in the queue
+
+##
+
+We need to have the job-id first, which we can obtain calling `qstat`
+
+```{bash, eval = F}
+qsub script.sh
+qstat
+qdel the_job_id_you_see_on_qstat
+```
 
 # qalter
 
