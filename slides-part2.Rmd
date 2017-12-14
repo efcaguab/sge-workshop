@@ -65,6 +65,56 @@ qalter
 
 # qsub
 
+##
+
+To use qsub, we will "always" need a bash script that runs our R scripts.
+
+##
+
+Write with nano a bash script named `script.sh`:
+
+```{bash, eval = F}
+#!/bin/bash
+
+Rscript script.R
+
+```
+##
+
+Now you should have an R script named `script.R` and a bash script named `script.sh`. Try running the job in the cluster by means of:
+
+```{bash, eval = F}
+qsub -cwd -S /bin/bash script.sh
+```
+##
+
+You will see that two new files have been created in your home directory.
+
+##
+`script.sh.o`
+
+This is the output file. Unless Steve messes up with the cluster, you should see the output of the R script inside
+
+##
+
+`script.sh.e`
+
+This is the errors file. Unless Steve messes up with the cluster, you can use it to debug your bash code.
+
+##
+
+You could try changing the Rscript to produce an error:
+
+```{r, eval = F}
+Sys.sleep(20)
+message("my second job in the cluster")
+error <- log("This will produce an error because it is a string")
+```
+
+
+##
+
+
 # qstat
 
 # qdel
