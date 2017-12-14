@@ -24,7 +24,7 @@ Although the cluster is just like any other computer, the way we run scripts is 
 
 ##
 
-That's why we need a queuing system...
+That's why we need a queueing system...
 
 ## The queueing system
 
@@ -34,23 +34,23 @@ That's why we need a queuing system...
 
 - Manages job priorities
 
-- Ensures that jobs are contained and the nodes are shielded from possible errors
+- Ensures that jobs are contained and the nodes are shieded from possoble errors
 
 - Ensures that jobs are run only within allocated resources (cores/RAM memory/time)
 
 ##
 
-The master node hosts the queuing system. That's why we shouldn't run jobs there.
+The master node hosts the queueing system. That's why we shouldn't run jobs there.
 
 ##
 
-If the master node crashes, the queuing system crashes too. Which means everyone's jobs might go with it. No one can use the cluster until the whole thing is reset. 
+If the master node chrashes, the queueing system crashes too. Which means everyone's jobs might go with it. No one can use the cluster until the whole thing is reset. 
 
 # SGE
 
 ##
 
-There are multiple queuing systems available. Abacus uses SGE (Sun Grid Engine System). 
+There are multiple quewing systems available. Abacus uses SGE (Sun Grid Engine System). 
 
 ##
 
@@ -150,7 +150,7 @@ job-ID  prior   name       user         state submit/start at     queue         
 
 ## 
 
-try submitting a job and then getting info about it
+try submiting a job and then getting info about it
 
 ```{bash, eval = F}
 qsub script.sh
