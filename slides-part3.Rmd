@@ -8,8 +8,6 @@ Let's get into making the most out of the cluster...
 
 # Parallel jobs
 
-flag y concepto
-
 ##
 
 What is a parallel job?
@@ -82,8 +80,6 @@ Have a look at the output files to see the results!
 
 
 # Multicore programming
-
-flag y concepto
 
 ## 
 
@@ -196,8 +192,6 @@ qsub -S /bin/bash -pe multi_thread 8 script-multicore.sh
 Take into account that the more cores we request the harder it is to schedule these jobs cause the cluster needs to find a node with all those cores free. 
 
 # RAM Memory limitations
-
-flag y concepto
 
 ##
 
