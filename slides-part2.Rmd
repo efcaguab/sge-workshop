@@ -98,7 +98,7 @@ This is the output file. Unless Steve messes up with the cluster, you should see
 
 `script.sh.e`
 
-This is the errors file. Unless Steve messes up with the cluster, you can use it to debug your bash code.
+This is the errors file. Unless Steve messes up with the cluster, you can use it to debug your code.
 
 ##
 
