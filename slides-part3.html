@@ -665,51 +665,37 @@ output &lt;-<span class="st"> </span><span class="dv">10</span>
 <section><section id="abacus-gateway" class="titleslide slide level1"><h1>Abacus Gateway</h1></section><section id="section-32" class="slide level2">
 <h1></h1>
 <p>To do that, we just need to use a different cluster that helps us go through the University firewall. This cluster is called abacus gateway, and you already have an account in it:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ssh</span> usr123@abacus-gw.canterbury.ac.nz
-<span class="kw">``</span>
-
-<span class="kw">The</span> password is <span class="kw">`gateway2workshop`</span>
-
-<span class="co">##</span>
-
-<span class="kw">Change</span> your password again:</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">passwd</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ssh</span> usr123@abacus-gw.canterbury.ac.nz</code></pre>
+<p>The password is <code>gateway2workshop</code></p>
 </section><section id="section-33" class="slide level2">
 <h1></h1>
+<p>Change your password again:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">passwd</span></code></pre>
+</section><section id="section-34" class="slide level2">
+<h1></h1>
 <p>Now you can wither access to the cluster with:</p>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ssh</span> usr123@abacus
-<span class="kw">``</span>
-
-<span class="kw">Or</span> your computer with your computer name:</code></pre>
-<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ssh</span> bbr36@biolz210-9
-<span class="kw">``</span>
-
-<span class="co">##</span>
-
-
-
-<span class="co"># Python. Anyone? :)</span>
-
-<span class="kw">In</span> the cluster you can use any programming language.
-
-<span class="co">##</span>
-
-<span class="kw">Let</span><span class="st">'s make a simple python script called `script.py`:</span></code></pre>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ssh</span> usr123@abacus</code></pre>
+<p>Or your computer with your computer name:</p>
+<pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">ssh</span> bbr36@biolz210-9</code></pre>
+</section></section>
+<section><section id="python.-anyone" class="titleslide slide level1"><h1>Python. Anyone? :)</h1></section><section id="section-35" class="slide level2">
+<h1></h1>
+<p>Let’s make a simple python script called <code>script.py</code>:</p>
 <pre class="sourceCode r"><code class="sourceCode r">def <span class="kw">fprint</span>(x):
 <span class="st">    </span>print x</code></pre>
 <p>This script print a variable x</p>
-</section><section id="section-34" class="slide level2">
+</section><section id="section-36" class="slide level2">
 <h1></h1>
 <p>The bash file that calls this script in the cluster would be something like this:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="co">#!/bin/bash</span>
 
 <span class="kw">python</span> -c <span class="st">&quot;import script; script.fprint('</span><span class="ot">$1</span><span class="st">')&quot;</span></code></pre>
 <p>We import the python script and we run it.</p>
-</section><section id="section-35" class="slide level2">
+</section><section id="section-37" class="slide level2">
 <h1></h1>
 <p>Let’s say that you want to call the python function and print your name. To do so, you just need to run qsub as:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">qsub</span> -cwd -S /bin/bash script-python.sh <span class="st">&quot;Fernat&quot;</span></code></pre>
-</section><section id="section-36" class="slide level2">
+</section><section id="section-38" class="slide level2">
 <h1></h1>
 <p>If you check the output files you will see that we have just printed your name.</p>
 </section></section>

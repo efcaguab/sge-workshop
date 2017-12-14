@@ -303,7 +303,7 @@ To do that, we just need to use a different cluster that helps us go through the
 
 ```{bash, eval = F}
 ssh usr123@abacus-gw.canterbury.ac.nz
-``
+```
 
 The password is `gateway2workshop`
 
@@ -321,16 +321,12 @@ Now you can wither access to the cluster with:
 
 ```{bash, eval = F}
 ssh usr123@abacus
-``
+```
 
 Or your computer with your computer name:
 ```{bash, eval = F}
 ssh bbr36@biolz210-9
-``
-
-##
-
-
+```
 
 # Python. Anyone? :)
 
