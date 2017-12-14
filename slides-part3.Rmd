@@ -293,4 +293,81 @@ load("output.RData")
 print(output)
 ```
 
+# Abacus Gateway
 
+What about accessing your computer in the office or the cluster from home?
+
+##
+
+To do that, we just need to use a different cluster that helps us go through the University firewall. This cluster is called abacus gateway, and you already have an account in it:
+
+```{bash, eval = F}
+ssh usr123@abacus-gw.canterbury.ac.nz
+``
+
+The password is `gateway2workshop`
+
+##
+
+Change your password again:
+
+```{bash, eval = F}
+passwd
+```
+
+##
+
+Now you can wither access to the cluster with:
+
+```{bash, eval = F}
+ssh usr123@abacus
+``
+
+Or your computer with your computer name:
+```{bash, eval = F}
+ssh bbr36@biolz210-9
+``
+
+##
+
+
+
+# Python. Anyone? :)
+
+In the cluster you can use any programming language.
+
+##
+
+Let's make a simple python script called `script.py`:
+
+```{r, eval = F}
+
+def fprint(x):
+    print x
+
+```
+This script print a variable x
+
+##
+
+The bash file that calls this script in the cluster would be something like this:
+
+```{bash, eval = F}
+#!/bin/bash
+
+python -c "import script; script.fprint('$1')"
+
+```
+We import the python script and we run it.
+
+##
+
+Let's say that you want to call the python function and print your name. To do so, you just need to run qsub as: 
+
+```{bash, eval = F}
+qsub -cwd -S /bin/bash script-python.sh "Fernat"
+```
+
+##
+
+If you check the output files you will see that we have just printed your name.
