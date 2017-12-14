@@ -1,0 +1,5 @@
+revealjs::revealjs_presentation:
+  center: true
+  theme: sky
+  highlight: monochrome
+  css: slides-style.css
