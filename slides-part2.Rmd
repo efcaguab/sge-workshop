@@ -174,6 +174,21 @@ qstat
 qdel the_job_id_you_see_on_qstat
 ```
 
+##Bonus
+
+##
+SGE provides a graphical interface for submitting jobs. Try the following:
+
+On your computer
+```{bash, eval = F}
+ssh -X usr123@abacus
+```
+
+And then on abacus:
+```{bash, eval = F}
+qmon
+```
+
 
 
 
