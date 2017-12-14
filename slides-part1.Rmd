@@ -1,0 +1,200 @@
+---
+title: "Abacus - Part 1"
+author: "Bernat Bramon & Fernando Cagua"
+date: "December 15, 2017"
+---
+
+The cluster is just another computer
+
+# Basic unix commands
+
+## 
+
+Open a terminal and play with these commands:
+
+```{bash, eval = F}
+ls
+pwd
+mkdir new_directory
+touch new_file
+
+cd new_directory
+cd ..
+ls -l 
+cp new_file new_directory/
+ls -l new_directory
+
+rm -r new_directory new_file
+```
+
+
+## 
+
+Try exploring your own computer using the terminal. For example, navigate to your last project's directory.
+
+# Accessing the cluster
+
+## 
+
+Log into your account
+
+```{bash, eval = F}
+ssh usr123@abacus
+```
+
+##
+
+Create a new directory in your home directory. It's just the same as in your computer.
+
+```{bash, eval = F}
+mkdir ~/workshop
+```
+
+## 
+
+Change your password
+
+```{bash, eval = F}
+passwd
+```
+
+
+##
+
+To exit the cluster use `Ctlr + D`
+
+# Moving files to the cluster
+
+##
+
+Start by making an R script by typing the following:
+
+```{r, eval = F}
+Sys.sleep(20)
+message("my first job in the cluster")
+```
+
+## 
+
+Now let's move it to the cluster
+
+In your computer's terminal type:
+
+```{bash, eval = F}
+scp ~/path_to_sript/r_script_name.R usr123@abacus:~/workshop 
+```
+
+## 
+
+We can also modify the R script in Abacus
+
+In the abacus terminal type:
+
+```{bash, eval = F}
+cd ~/workshop
+nano r_script_name.R
+```
+
+Besides `nano` you can also use other text editors like `vim` or `vi` in case you need/want to modify files directly in the cluster
+
+# Pulling files from Github
+
+
+## 
+
+Visit the GitHub repository on http://github.com/efcaguab/sge-workshop
+
+## 
+We can downloading from GitHub to the cluster. 
+
+But first we need to enable internet in Abacus.
+
+```{bash, eval = F}
+telnet ienabler 259
+```
+
+## 
+
+On the Abacus terminal:
+
+```{bash, eval = F}
+cd ~/
+git clone git@github.com:efcaguab/sge-workshop.git
+```
+
+Now you have all the workshop materials in abacus. Try to modify `script-2.R` from Abaucs using `nano`
+
+# Abacus basics
+
+##
+
+- A high performance computer (HPC) is not a faster computer. It's several computers connected together.
+
+- Each of these computers is called *node*. Each node can have multiple cores
+
+- Every core can run one job
+
+## 
+
+- One node acts as a master which distributes jobs across the other nodes
+
+- To distribute those jobs, the master node uses *queues*. We'll look into that in Part 2
+
+- When you log-in, as we did before, you access the master node
+
+## Abacus
+
+##
+
+- Abacus has 22 nodes total. 15 of them are available for computing at the School of Biology
+
+- Nodes available have between 8 and 48 cores each. Total of 432 cores
+
+- You can explore this yourself by going to http://abacus/ganglia/ on your browser
+
+## 
+
+Have a look at the file structure
+
+```{bash, eval = F}
+ls /
+```
+
+When you log-in you're actually in `/home/usr123`
+
+##
+
+- Usually you store your scripts and raw data in you home directory
+
+- The output files, especially if they're heavy, should go to `/data/people/usr123`
+
+- Create your own directory in `/data/people`
+
+## Best practices
+
+##
+
+In your computer you would run an R script using 
+
+```{bash, eval = F}
+Rscript script.R
+```
+
+<span class="rojito">&#9762; Never do that in the cluster &#9762;</span>
+
+cause you could break it...
+
+##
+
+- Make sure that your script runs well in your computer before sending it to the cluster. 
+
+- Troubleshooting in the cluster can be a nightmare.
+
+##
+
+- Abacus is a shared resource. Be nice to other people. Don't use it all unless you really need it.
+
+- Don't be afraid to use it though. It's there for us.
+
+
+
