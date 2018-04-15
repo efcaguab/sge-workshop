@@ -1,3 +1,12 @@
 .Rproj*
 .Rproj.user
 .Rhistory
+packrat/lib*/
+
+\.DS_Store
+
+slides/slides-part1\.html
+
+slides/slides-part2\.html
+
+slides/slides-part3\.html
