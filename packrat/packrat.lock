@@ -110,6 +110,12 @@ Source: CRAN
 Version: 0.4.8-1
 Hash: 6ad605ba7b4b476d84be6632393f5765
 
+Package: revealjs
+Source: CRAN
+Version: 0.9
+Hash: d33e5b244ff56eaec0dec87babea8730
+Requires: rmarkdown
+
 Package: rmarkdown
 Source: CRAN
 Version: 1.6
