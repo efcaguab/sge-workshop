@@ -1,0 +1,33 @@
+body{
+  background-color: #eee;
+}
+
+footer{
+  border-top: 1px solid rgba(0,0,0,.125);
+  /* background-color: #ddd; */
+  /* color: white; */
+}
+.jumbotron {
+  background-color: #CA081D;
+  color: #fff;
+}
+
+.lead {
+  font-family: 'Georgia', 'Times New Roman', 'Times', serif;
+}
+
+.card-col {
+  padding: 15px;
+}
+
+.btn-outline-secondary {
+  background-color: white;
+  color: black;
+  border: 1px solid rgba(0,0,0,.125);
+}
+
+@media (max-width: 576px) {
+  h1 .display-3 {
+    font-size: 3rem;
+  }
+}
