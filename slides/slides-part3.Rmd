@@ -177,14 +177,14 @@ Rscript script-multicore.R
 
 But we need to tell qsub that our job needs several cores instead of one. 
 
-To do that we use the option `-pe multi-thread`
+To do that we use the option `-pe smp`
 
 ##
 
 You can run the parallel loop typing the following in the Abacus console
 
 ```{bash, eval = F}
-qsub -S /bin/bash -pe multi_thread 8 script-multicore.sh
+qsub -S /bin/bash -pe smp 8 script-multicore.sh
 ```
 
 ##
