@@ -177,7 +177,7 @@ Rscript script-multicore.R
 
 But we need to tell qsub that our job needs several cores instead of one. 
 
-To do that we use the option `-pe multi-thread`
+To do that we use the option `-pe smp`
 
 ##
 
@@ -302,7 +302,7 @@ What about accessing your computer in the office or the cluster from home?
 To do that, we just need to use a different cluster that helps us go through the University firewall. This cluster is called abacus gateway, and you already have an account in it:
 
 ```{bash, eval = F}
-ssh usr123@abacus-gw.canterbury.ac.nz
+ssh - p9022 usr123@abacus-gw.canterbury.ac.nz
 ```
 
 The password is `gateway2workshop`
