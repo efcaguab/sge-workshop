@@ -166,9 +166,9 @@ When you log-in you're actually in `/home/usr123`
 
 - Usually you store your scripts and raw data in you home directory
 
-- The output files, especially if they're heavy, should go to `/data/people/usr123`
+- The output files, especially if they're heavy, should go to `/share/data/people/usr123`
 
-- Create your own directory in `/data/people`
+- Create your own directory in `/share/data/people`
 
 ## Best practices
 
